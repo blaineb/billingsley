@@ -1,0 +1,164 @@
+////////////////////////////////////////////////////////////////////////////////
+// Basics
+////////////////////////////////////////////////////////////////////////////////
+html { font-size: 62.5%; } /* 1.0rem = 10px  */
+body {
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.4em;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: "Graphik", "New Century Schoolbook", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #999999;
+}
+img { max-width: 100%; }
+video { max-width: 100%; margin: 0 auto; display: block; }
+
+////////////////////////////////////////
+// Typography
+////////////////////////////////////////
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Graphik", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: #323337;
+}
+
+h1 { font-size: 4.0rem; line-height: 1.2  ; letter-spacing: -.2rem  ; font-weight: 500;                     }
+h2 { font-size: 2.8rem; line-height: 1.25 ; letter-spacing: -.15rem ; margin-bottom: 24px;                  }
+h3 { font-size: 1.8rem; line-height: 1    ; letter-spacing: 0       ; font-weight: 500; padding-bottom: 8px;}
+h4 { font-size: 1.6rem; line-height: 1.35 ; letter-spacing: 0       ;                                       }
+h5 { font-size: 1.4rem; line-height: 1.5  ; letter-spacing: -.05rem ;                                       }
+h6 { font-size: 1.2rem; line-height: 1.6  ; letter-spacing: 0       ; color: #bbbbbb;                       }
+
+@media (min-width: 550px) {
+  body { font-size: 1.6em; }
+  h1 { font-size: 4.0rem; }
+  h2 { font-size: 3.2rem; }
+  h3 { font-size: 2.0rem; }
+  h4 { font-size: 2.4rem; }
+  h5 { font-size: 1.8rem; }
+  h6 { font-size: 1.5rem; }
+}
+
+.section-header { position: relative; text-align: center; }
+.section-header h6 { background-color: white; display: inline-block; padding: 0 16px; }
+.section-header::before {
+  background-color: #ededed;
+  content: '';
+  height: 1px;
+  left:0;
+  position: absolute;
+  right: 0;
+  top: .6em;
+  z-index: -1;
+}
+
+p { margin: 0; }
+
+p.caption { font-size: 1.2rem; }
+@media (max-width: 550px) {
+  p.pd-b-md, h4.pd-b-md { padding-bottom: 24px; }
+}
+a, a:visited {
+  text-decoration: none;
+  color: #1EAEDB; }
+
+a:hover {
+  color: #0FA0CE; }
+
+.centered { text-align: center; }
+
+////////////////////////////////////////////////////////////////////////////////
+// Layout
+////////////////////////////////////////////////////////////////////////////////
+
+// Basic layout
+// section
+//  .row
+//    .columns
+
+.section { padding: 80px 0; }
+
+@media (min-width: 550px) {
+  .section { padding: 180px 0; }
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+ @media (min-width: 769px) {
+
+  .row {
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 48px;
+  }
+  
+  .grid { flex-wrap: wrap; }
+  .align-items-center { align-items: center; }
+
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+
+  .four.columns,
+  .one-third.column, 
+  .one-third.columns              { width: 30.6666666667%; }
+
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns, 
+  .one-half.column                { width: 48%;            }
+
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; }
+
+  .m-r-one-column     { margin-right: 4.66666666667%; }
+
+  .m-l-one-column     { margin-left: 4.66666666667%;  }
+  .m-l-two-columns    { margin-left: 17.3333333333%;  }
+  .m-l-three-columns  { margin-left: 26%;            }
+  // Offsets for use in utility classes
+  // one:     8.66666666667%
+  // two:     17.3333333333%
+  // three:   26%
+  // four:    34.6666666667%
+  // five:    43.3333333333%
+  // six:     52%;          
+  // seven:   60.6666666667%
+  // eight:   69.3333333333%
+  // nine:    78.0%;        
+  // ten:     86.6666666667%
+  // eleven:  95.3333333333%
+}
+
+
+.row.centered { justify-content: center; }
+.row.reverse { flex-direction: row-reverse; }
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Utilities
+////////////////////////////////////////////////////////////////////////////////
+
+// pd = padding, b = bottom
+.pd-b-sm { padding-bottom: 24px; }
+.pd-b-md { padding-bottom: 56px; }
+.pd-b-lg { padding-bottom: 80px; }
+.pd-b-xl { padding-bottom: 180px; }
+.pd-t-sm { padding-top: 24px; }
+.pd-t-md { padding-top: 56px; }
+.pd-t-lg { padding-top: 80px; }
+
